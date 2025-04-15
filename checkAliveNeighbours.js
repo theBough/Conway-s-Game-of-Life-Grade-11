@@ -1,4 +1,4 @@
-function checkAliveNeighbours(){
+function checkAliveNeighbours(cellNum){
   //number of alive neighbours
   let isAlive = 0;
   
