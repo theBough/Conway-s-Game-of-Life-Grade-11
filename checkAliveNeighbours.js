@@ -25,7 +25,7 @@ function checkAliveNeighbours(cellNum){
   
   //check bottom neighbour
   if(cellNum < (numRows - 1) * numCols){//check if cell is on the bottom of the grid
-    if(grid[cellNum - numCols].alive){//check if bottom neighbour is alive
+    if(grid[cellNum + numCols].alive){//check if bottom neighbour is alive
       isAlive++;
     }
   }
