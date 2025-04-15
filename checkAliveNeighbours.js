@@ -29,7 +29,7 @@ function checkAliveNeighbours(cellNum){
       isAlive++;
     }
   }
-
-
   //to get diagonals, combine the statements (ex.for top left, combine code for top neighbour and left neighbour
+
+  return isAlive;
 }
