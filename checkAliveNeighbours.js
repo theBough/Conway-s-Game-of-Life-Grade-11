@@ -1,4 +1,4 @@
-function numAliveNeighbours(){
+function checkAliveNeighbours(){
   //number of alive neighbours
   let isAlive = 0;
   
@@ -29,5 +29,7 @@ function numAliveNeighbours(){
       isAlive++;
     }
   }
-  
+
+
+  //to get diagonals, combine the statements (ex.for top left, combine code for top neighbour and left neighbour
 }
