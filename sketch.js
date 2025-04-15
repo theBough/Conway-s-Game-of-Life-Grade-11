@@ -2,7 +2,7 @@ let grid = []
 let size = 50;
 let numRows = 7;
 let numCols = 7;
-let initialSet = []//initial alive cells
+let aliveSet = [11,12,13]//alive cells
 let aliveCol = 40
 let deadCol = 200;
 function setup() {
