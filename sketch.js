@@ -22,3 +22,11 @@ function draw() {
     grid[i].display()
   }
 }
+
+function setIteration(){
+  for(let i = 0; i<aliveSet.length; i++){
+    liveCell = aliveSet[i]; //getting the index for an alive cell
+    grid[liveCell].alive = true;
+    grid[liveCell].myColour = aliveCol;
+  }
+}
