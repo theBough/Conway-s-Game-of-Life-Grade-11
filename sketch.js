@@ -11,8 +11,9 @@ function setup() {
     for(let j = 0; j<numCols; j++){
       grid.push(new Cell(j*size,i*size,size,deadCol,false))
     }
-
   }
+
+  setIteration()
 }
 
 function draw() {
