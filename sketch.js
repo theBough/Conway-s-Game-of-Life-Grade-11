@@ -2,7 +2,7 @@ let grid = []
 let size = 50;
 let numRows = 7;
 let numCols = 7;
-let aliveSet = [11,12,13]//alive cells
+let aliveSet = [11,12,13,45]//alive cells
 let aliveCol = 40
 let deadCol = 200;
 function setup() {
@@ -12,7 +12,7 @@ function setup() {
       grid.push(new Cell(j*size,i*size,size,deadCol,false))
     }
   }
-
+  
   setIteration()
 }
 
@@ -38,11 +38,17 @@ function clearAliveSet(){
   }
 }
 
+//Rule 1: If a cell is alive, it needs 2-3 neighbours to stay alive
+//Rule 2: If a cell has 4 or more alive neighbours, it will die
+//Rule 3: If a cell is dead, but has 3 alive neighbours, it will be alive
+//Rule 4: If a cell has 1 or 0 alive neighbours it will die.
 function newIteration(){
   for(let i=0; i<grid.length; i++){
     let liveNeighbours = checkAliveNeighbours(i)
     
-    
+    if((liveNeighbours == 2 || liveNeighbours == 3) && grid[i].alive){
+      aliveSet.push(i)
+    }
   }
 
 }
