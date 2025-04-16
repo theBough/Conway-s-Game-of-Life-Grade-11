@@ -31,3 +31,18 @@ function setIteration(){
     grid[liveCell].myColour = aliveCol;
   }
 }
+
+function clearAliveSet(){
+  while(aliveSet.length > 0){
+    aliveSet.pop();
+  }
+}
+
+function newIteration(){
+  for(let i=0; i<grid.length; i++){
+    let liveNeighbours = checkAliveNeighbours(i)
+    
+    
+  }
+
+}
