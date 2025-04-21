@@ -2,7 +2,7 @@ let grid = []
 let size = 50;
 let numRows = 7;
 let numCols = 7;
-let aliveSet = [11,12,13,45]//alive cells
+let aliveSet = [11,12,13]//alive cells
 let aliveCol = 40
 let deadCol = 200;
 function setup() {
@@ -18,9 +18,25 @@ function setup() {
 
 function draw() {
   background(220);
-  
+
   for(let i = 0; i<grid.length; i++){
     grid[i].display()
+  }
+}
+
+function keyReleased(){
+  if(key == 'n'){
+    clearAliveSet()
+    newIteration()
+    clearGrid();
+    setIteration()
+  }
+}
+
+function clearGrid(){
+  for(let i = 0; i<grid.length; i++){
+    grid[i].alive = false;
+    grid[i].myColour = deadCol;
   }
 }
 
@@ -45,10 +61,14 @@ function clearAliveSet(){
 function newIteration(){
   for(let i=0; i<grid.length; i++){
     let liveNeighbours = checkAliveNeighbours(i)
-    
-    if((liveNeighbours == 2 || liveNeighbours == 3) && grid[i].alive){
+    if(liveNeighbours == 2 && grid[i].alive){
       aliveSet.push(i)
     }
+    
+    if(liveNeighbours == 3){
+      aliveSet.push(i)
+    }
+
   }
 
 }
